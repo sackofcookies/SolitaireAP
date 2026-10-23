@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dq35x1pp57yqf"]
+
+[ext_resource type="Texture2D" uid="uid://b540cdivscg6n" path="res://godot_ap/assets/Deck of cards ( full cards ).png" id="1_j5jr4"]
+[ext_resource type="Script" uid="uid://c18lerbg8jmws" path="res://godot_ap/solitaireAP/Scripts/deck.gd" id="2_cscht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmog2"]
+atlas = ExtResource("1_j5jr4")
+region = Rect2(145, 216, 49, 72)
+
+[node name="Deck" type="TextureRect" unique_id=259796299]
+custom_minimum_size = Vector2(147, 216)
+texture = SubResource("AtlasTexture_xmog2")
+script = ExtResource("2_cscht")

@@ -1,5 +1,7 @@
 extends VBoxContainer
 
+class_name Target
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -11,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	if self.get_parent().is_invalid_placement(data):
+	if data == self or data.is_ancestor_of(self) or !self.get_parent().is_valid_placement(data):
 		return false
 	return self.get_children().is_empty()
 

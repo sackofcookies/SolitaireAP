@@ -32,17 +32,18 @@ func _notification(what: int) -> void:
 	if what == NOTIFICATION_DRAG_END and not self.is_drag_successful():
 		self.set_modulate(Color(1,1,1,1))
 
+#checks if the card just below this card is 
 func is_child_valid() -> bool:
 	var child_card = self.get_node("Target").get_children()
 	if child_card.is_empty():
 		return true
 	child_card = child_card[0]
 
-	if (self.suit < 3 and child_card.suit > 2) or (self.suit > 2 and child_card.suit < 3):
-		if child_card.value + 1 == self.value:
-			return child_card.is_child_valid();
+	if self.is_valid_placement(child_card):
+		return child_card.is_child_valid();
 	return false
 
+#finds the lowest card in a stack of cards
 func get_last_child() -> Card:
 	var child_card = self.get_node("Target").get_children()
 	if child_card.is_empty():
@@ -50,5 +51,6 @@ func get_last_child() -> Card:
 	else:
 		return child_card[0].get_last_child()
 
-func is_invalid_placement(data: Card) -> bool:
-	return data == self or data.is_ancestor_of(self) or (data.value + 1 != self.value)
+#ran by target to see what the rules on placement are
+func is_valid_placement(data: Card) -> bool:
+	return (data.value + 1 == self.value) and ((self.suit < 3 and data.suit > 2) or (self.suit > 2 and data.suit < 3))
