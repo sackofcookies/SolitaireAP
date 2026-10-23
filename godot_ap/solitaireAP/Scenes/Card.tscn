@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://0bcswns65mx1"]
+
+[ext_resource type="Texture2D" uid="uid://drsb8rknox20d" path="res://icon.svg" id="1_pnb5n"]
+[ext_resource type="Script" uid="uid://dxkul6jso2pmt" path="res://godot_ap/solitaireAP/Scripts/card.gd" id="2_3p273"]
+[ext_resource type="PackedScene" uid="uid://nr2w6mt2ggvs" path="res://godot_ap/solitaireAP/Scenes/Target.tscn" id="3_h8wm0"]
+
+[node name="Card" type="TextureRect" unique_id=837580021]
+anchors_preset = -1
+anchor_right = 0.112
+anchor_bottom = 0.19600001
+offset_left = 1.0
+offset_top = 2.0
+offset_right = -0.024002075
+offset_bottom = 2.9919968
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pnb5n")
+stretch_mode = 2
+script = ExtResource("2_3p273")
+
+[node name="Target" parent="." unique_id=2112513271 instance=ExtResource("3_h8wm0")]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.319
+anchor_bottom = 0.19900002
+offset_left = -1.0
+offset_top = 35.0
+offset_right = 86.168
+offset_bottom = 137.528

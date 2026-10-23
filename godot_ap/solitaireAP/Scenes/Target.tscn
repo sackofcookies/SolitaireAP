@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://nr2w6mt2ggvs"]
+
+[ext_resource type="Script" uid="uid://dpkilj0hcvpc0" path="res://Scripts/target.gd" id="1_3saft"]
+
+[node name="Target" type="VBoxContainer" unique_id=2112513271]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3saft")

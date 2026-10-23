@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://clur1yu1pnt5y"]
+
+[ext_resource type="PackedScene" uid="uid://0bcswns65mx1" path="res://Scenes/Card.tscn" id="1_r150o"]
+
+[node name="Main" type="Node2D" unique_id=1570818463]
+
+[node name="Card" parent="." unique_id=837580021 instance=ExtResource("1_r150o")]
+offset_left = 181.0
+offset_top = 116.0
+offset_right = 309.0
+offset_bottom = 244.0
+
+[node name="Card2" parent="." unique_id=600934771 instance=ExtResource("1_r150o")]
+offset_left = 613.0
+offset_top = 111.0
+offset_right = 741.0
+offset_bottom = 239.0
+value = 2
+suit = 3
+
+[node name="Card3" parent="." unique_id=1449317570 instance=ExtResource("1_r150o")]
+offset_left = 870.0
+offset_top = 330.0
+offset_right = 998.0
+offset_bottom = 458.0
+value = 3
