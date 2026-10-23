@@ -5,8 +5,11 @@ class_name Card
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	var temp = AtlasTexture.new()
+	temp.atlas = self.texture.atlas
+	temp.region = self.texture.region
+	self.texture = temp
+	self.texture.region.position = Vector2(48*(value-1), 64*(suit-1))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -46,3 +49,6 @@ func get_last_child() -> Card:
 		return self
 	else:
 		return child_card[0].get_last_child()
+
+func is_invalid_placement(data: Card) -> bool:
+	return data == self or data.is_ancestor_of(self) or (data.value + 1 != self.value)

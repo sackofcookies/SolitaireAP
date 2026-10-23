@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	if data == self.get_parent() or data.is_ancestor_of(self) or (data.value + 1 != self.get_parent().value):
+	if self.get_parent().is_invalid_placement(data):
 		return false
 	return self.get_children().is_empty()
 
