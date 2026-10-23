@@ -39,3 +39,10 @@ func is_child_valid() -> bool:
 		if child_card.value + 1 == self.value:
 			return child_card.is_child_valid();
 	return false
+
+func get_last_child() -> Card:
+	var child_card = self.get_node("Target").get_children()
+	if child_card.is_empty():
+		return self
+	else:
+		return child_card[0].get_last_child()
