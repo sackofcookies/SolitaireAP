@@ -19,7 +19,8 @@ func _get_drag_data(position: Vector2):
 		return null
 
 	var preview = self.duplicate()
-
+	preview.offset_transform_enabled = true
+	preview.set_offset_transform_position(Vector2(-(self.texture.get_width()/2), 0))
 	set_drag_preview(preview)
 	self.set_modulate(Color(1,1,1,0))
 	return self
@@ -38,4 +39,3 @@ func is_child_valid() -> bool:
 		if child_card.value + 1 == self.value:
 			return child_card.is_child_valid();
 	return false
-

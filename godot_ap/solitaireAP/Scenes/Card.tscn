@@ -6,14 +6,16 @@
 
 [node name="Card" type="TextureRect" unique_id=837580021]
 anchors_preset = -1
-anchor_right = 0.112
+anchor_left = 0.057000004
+anchor_right = 0.057000004
 anchor_bottom = 0.19600001
-offset_left = 1.0
+offset_left = -41.750004
 offset_top = 2.0
-offset_right = -0.024002075
+offset_right = 41.225994
 offset_bottom = 2.9919968
 grow_horizontal = 2
 grow_vertical = 2
+offset_transform_enabled = true
 texture = ExtResource("1_pnb5n")
 stretch_mode = 2
 script = ExtResource("2_3p273")

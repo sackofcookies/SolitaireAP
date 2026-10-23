@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="GodotAP"
+config/name="SolitaireAP"
 config/description="Archipelago connection handler for Godot.
 See https://github.com/EmilyV99/GodotAP"
 config/version="0.4.1"
