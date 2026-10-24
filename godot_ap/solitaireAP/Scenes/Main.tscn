@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b2h08vi43dg6w" path="res://godot_ap/solitaireAP/Scenes/Slot.tscn" id="2_dt1el"]
 [ext_resource type="PackedScene" uid="uid://dq35x1pp57yqf" path="res://godot_ap/solitaireAP/Scenes/Deck.tscn" id="2_ystg3"]
+[ext_resource type="PackedScene" uid="uid://b41sopc6lbowu" path="res://godot_ap/solitaireAP/Scenes/deck_slot.tscn" id="3_ystg3"]
 
 [node name="Main" type="Node2D" unique_id=1570818463]
 
@@ -27,8 +28,15 @@ layout_mode = 2
 [node name="Slot5" parent="HBoxContainer" unique_id=491332799 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 
-[node name="Deck" parent="." unique_id=259796299 instance=ExtResource("2_ystg3")]
-offset_left = 51.0
-offset_top = 32.0
-offset_right = 198.0
-offset_bottom = 248.0
+[node name="Deck" parent="." unique_id=259796299 node_paths=PackedStringArray("deckSlot") instance=ExtResource("2_ystg3")]
+offset_left = 46.0
+offset_top = 31.0
+offset_right = 193.0
+offset_bottom = 247.0
+deckSlot = NodePath("../DeckSlot")
+
+[node name="DeckSlot" parent="." unique_id=1896127673 instance=ExtResource("3_ystg3")]
+offset_left = 44.0
+offset_top = 279.0
+offset_right = 190.0
+offset_bottom = 473.0

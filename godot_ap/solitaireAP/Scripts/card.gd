@@ -3,13 +3,20 @@ class_name Card
 @export_range(1,13) var value: int = 1
 @export_range(1,4) var suit: int = 1
 
+func _init(new_suit:int, new_value:int):
+	self.value = new_value
+	self.suit = new_suit
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var temp = AtlasTexture.new()
-	temp.atlas = self.texture.atlas
-	temp.region = self.texture.region
-	self.texture = temp
-	self.texture.region.position = Vector2(48*(value-1), 64*(suit-1))
+	self.texture = load("res://godot_ap/assets/cards.tres")
+	#var temp = AtlasTexture.new()
+	#temp.atlas = self.texture.atlas
+	#temp.region = self.texture.region
+	#self.texture = temp
+	self.texture.region.position = Vector2(48*(self.value-1), 64*(self.suit-1))
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

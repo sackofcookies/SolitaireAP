@@ -1,19 +1,15 @@
 [gd_scene format=3 uid="uid://0bcswns65mx1"]
 
-[ext_resource type="Texture2D" uid="uid://d2pp6yyls6kwc" path="res://godot_ap/assets/1.2 Poker cards.png" id="1_kiiuq"]
+[ext_resource type="Texture2D" uid="uid://cej776vfk8e8h" path="res://godot_ap/assets/cards.tres" id="1_kiiuq"]
 [ext_resource type="Script" uid="uid://dxkul6jso2pmt" path="res://godot_ap/solitaireAP/Scripts/card.gd" id="2_3p273"]
 [ext_resource type="PackedScene" uid="uid://nr2w6mt2ggvs" path="res://godot_ap/solitaireAP/Scenes/Target.tscn" id="3_h8wm0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kiiuq"]
-atlas = ExtResource("1_kiiuq")
-region = Rect2(0, 0, 48, 64)
 
 [node name="Card" type="TextureRect" unique_id=837580021]
 custom_minimum_size = Vector2(144, 192)
 offset_right = 144.0
 offset_bottom = 192.0
 offset_transform_enabled = true
-texture = SubResource("AtlasTexture_kiiuq")
+texture = ExtResource("1_kiiuq")
 script = ExtResource("2_3p273")
 
 [node name="Target" parent="." unique_id=2112513271 instance=ExtResource("3_h8wm0")]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b41sopc6lbowu"]
+
+[ext_resource type="PackedScene" uid="uid://b2h08vi43dg6w" path="res://godot_ap/solitaireAP/Scenes/Slot.tscn" id="1_2bogh"]
+[ext_resource type="Script" uid="uid://bfvq62yp477m8" path="res://godot_ap/solitaireAP/Scripts/deck_slot.gd" id="2_a20rh"]
+
+[node name="DeckSlot" unique_id=1113324756 instance=ExtResource("1_2bogh")]
+script = ExtResource("2_a20rh")

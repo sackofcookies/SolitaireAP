@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://cej776vfk8e8h"]
+
+[ext_resource type="Texture2D" uid="uid://d2pp6yyls6kwc" path="res://godot_ap/assets/1.2 Poker cards.png" id="1_w80ye"]
+
+[resource]
+atlas = ExtResource("1_w80ye")
+region = Rect2(0, 0, 48, 64)
