@@ -1,6 +1,7 @@
 extends TextureButton
 
 @export var deckSlot: Control
+@export var card: PackedScene
 
 #array of cards represented by vectors (suit, value)
 var cards: Array[Vector2i] = []
@@ -20,14 +21,15 @@ func _process(delta: float) -> void:
 
 func deal(location: Target):
 	if !cards.is_empty():
-		var temp = load("res://godot_ap/solitaireAP/Scenes/Card.tscn")
-		add_child(temp)
-		var card = get_children()[0]
-		card.suit = cards[0].x
-		card.value = cards[0].y
+		var temp: Card = card.instantiate() as Card
+		print(temp.suit)
+		location.add_child(temp)
+		temp.set_card(cards[0].y, cards[0].x)
 		cards.remove_at(0)
-		location.add_child(card)
+
 
 
 func _pressed() -> void:
+	self.deal(deckSlot.get_last_child().get_node("Target"))
+	self.deal(deckSlot.get_last_child().get_node("Target"))
 	self.deal(deckSlot.get_last_child().get_node("Target"))

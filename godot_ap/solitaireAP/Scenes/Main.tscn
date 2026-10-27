@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b2h08vi43dg6w" path="res://godot_ap/solitaireAP/Scenes/Slot.tscn" id="2_dt1el"]
 [ext_resource type="PackedScene" uid="uid://dq35x1pp57yqf" path="res://godot_ap/solitaireAP/Scenes/Deck.tscn" id="2_ystg3"]
+[ext_resource type="PackedScene" uid="uid://0bcswns65mx1" path="res://godot_ap/solitaireAP/Scenes/Card.tscn" id="3_2jeuk"]
 [ext_resource type="PackedScene" uid="uid://b41sopc6lbowu" path="res://godot_ap/solitaireAP/Scenes/deck_slot.tscn" id="3_ystg3"]
 
 [node name="Main" type="Node2D" unique_id=1570818463]
@@ -34,6 +35,7 @@ offset_top = 31.0
 offset_right = 193.0
 offset_bottom = 247.0
 deckSlot = NodePath("../DeckSlot")
+card = ExtResource("3_2jeuk")
 
 [node name="DeckSlot" parent="." unique_id=1896127673 instance=ExtResource("3_ystg3")]
 offset_left = 44.0
