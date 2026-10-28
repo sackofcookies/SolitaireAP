@@ -8,9 +8,17 @@ var cards: Array[Vector2i] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for i in range(3):
-		for j in range(12):
-			cards.append(Vector2i(i+1,j+1))
+	self.initialize_Deck(13,13,13,13)
+
+func initialize_Deck(hearts: int, diamonds: int, spades: int, clubs: int):
+	for i in range (hearts):
+		cards.append(Vector2i(1,i+1))
+	for i in range (diamonds):
+		cards.append(Vector2i(2,i+1))
+	for i in range (spades):
+		cards.append(Vector2i(3,i+1))
+	for i in range (clubs):
+		cards.append(Vector2i(4,i+1))
 	cards.shuffle()
 
 

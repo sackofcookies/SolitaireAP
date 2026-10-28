@@ -1,43 +1,46 @@
 [gd_scene format=3 uid="uid://clur1yu1pnt5y"]
 
+[ext_resource type="Script" uid="uid://dkxol2dfsxv1s" path="res://godot_ap/solitaireAP/Scripts/main.gd" id="1_ygqui"]
 [ext_resource type="PackedScene" uid="uid://b2h08vi43dg6w" path="res://godot_ap/solitaireAP/Scenes/Slot.tscn" id="2_dt1el"]
 [ext_resource type="PackedScene" uid="uid://dq35x1pp57yqf" path="res://godot_ap/solitaireAP/Scenes/Deck.tscn" id="2_ystg3"]
 [ext_resource type="PackedScene" uid="uid://0bcswns65mx1" path="res://godot_ap/solitaireAP/Scenes/Card.tscn" id="3_2jeuk"]
 [ext_resource type="PackedScene" uid="uid://b41sopc6lbowu" path="res://godot_ap/solitaireAP/Scenes/deck_slot.tscn" id="3_ystg3"]
+[ext_resource type="PackedScene" uid="uid://b6decu50pwib3" path="res://godot_ap/solitaireAP/Scenes/GoalStack.tscn" id="5_obd4s"]
 
 [node name="Main" type="Node2D" unique_id=1570818463]
+script = ExtResource("1_ygqui")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2022730133]
-offset_left = 276.0
-offset_top = 180.0
-offset_right = 1070.0
-offset_bottom = 374.0
+[node name="slots" type="HBoxContainer" parent="." unique_id=2022730133]
+offset_left = 325.0
+offset_top = 198.0
+offset_right = 1119.0
+offset_bottom = 392.0
 alignment = 1
 
-[node name="Slot" parent="HBoxContainer" unique_id=1113324756 instance=ExtResource("2_dt1el")]
+[node name="Slot" parent="slots" unique_id=1113324756 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 
-[node name="Slot2" parent="HBoxContainer" unique_id=1682983660 instance=ExtResource("2_dt1el")]
+[node name="Slot2" parent="slots" unique_id=1682983660 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 1
 
-[node name="Slot3" parent="HBoxContainer" unique_id=320432481 instance=ExtResource("2_dt1el")]
+[node name="Slot3" parent="slots" unique_id=320432481 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 2
 
-[node name="Slot4" parent="HBoxContainer" unique_id=572730274 instance=ExtResource("2_dt1el")]
+[node name="Slot4" parent="slots" unique_id=572730274 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 3
 
-[node name="Slot5" parent="HBoxContainer" unique_id=491332799 instance=ExtResource("2_dt1el")]
+[node name="Slot5" parent="slots" unique_id=491332799 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 4
 
-[node name="Slot6" parent="HBoxContainer" unique_id=1594892272 instance=ExtResource("2_dt1el")]
+[node name="Slot6" parent="slots" unique_id=1594892272 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 5
 
-[node name="Slot7" parent="HBoxContainer" unique_id=582312156 instance=ExtResource("2_dt1el")]
+[node name="Slot7" parent="slots" unique_id=582312156 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 6
 
@@ -54,3 +57,33 @@ offset_left = 150.0
 offset_top = 32.0
 offset_right = 259.5
 offset_bottom = 177.5
+
+[node name="GoalStacks" type="HBoxContainer" parent="." unique_id=832501763]
+offset_left = 325.0
+offset_top = 32.0
+offset_right = 769.0
+offset_bottom = 176.0
+
+[node name="GoalStack" parent="GoalStacks" unique_id=964499174 instance=ExtResource("5_obd4s")]
+layout_mode = 2
+
+[node name="GoalStack2" parent="GoalStacks" unique_id=317827739 instance=ExtResource("5_obd4s")]
+layout_mode = 2
+suit = 2
+
+[node name="GoalStack3" parent="GoalStacks" unique_id=2040890776 instance=ExtResource("5_obd4s")]
+layout_mode = 2
+suit = 3
+
+[node name="GoalStack4" parent="GoalStacks" unique_id=981583358 instance=ExtResource("5_obd4s")]
+layout_mode = 2
+suit = 4
+
+[node name="NewGame" type="Button" parent="." unique_id=756432209]
+offset_left = 952.0
+offset_top = 32.0
+offset_right = 1123.0
+offset_bottom = 72.0
+text = "New Game"
+
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]

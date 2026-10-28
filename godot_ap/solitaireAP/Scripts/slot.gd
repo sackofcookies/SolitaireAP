@@ -3,6 +3,7 @@ extends ColorRect
 class_name Slot
 
 @export_range(0,6) var slotNumber: int = 0
+var unlocked = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,10 +12,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if unlocked:
+		self.set_color(Color(1,1,1,1))
+	else:
+		self.set_color(Color(1,1,1,0))
 
 func is_valid_placement(data: Card) -> bool:
-	return true
+	return unlocked
 
 func _get_drag_data(position: Vector2):
 	return null
