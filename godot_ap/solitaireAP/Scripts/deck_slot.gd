@@ -13,3 +13,6 @@ func _process(delta: float) -> void:
 
 func is_valid_placement(data: Card) -> bool:
 	return false
+
+func is_stackable_slot(card: Card):
+	return false

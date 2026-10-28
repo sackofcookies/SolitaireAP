@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 func deal(location: Target):
 	if !cards.is_empty():
 		var temp: Card = card.instantiate() as Card
-		print(temp.suit)
 		location.add_child(temp)
 		temp.set_card(cards[0].y, cards[0].x)
 		cards.remove_at(0)

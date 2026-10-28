@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://nr2w6mt2ggvs" path="res://godot_ap/solitaireAP/Scenes/Target.tscn" id="1_faxop"]
 
 [node name="Slot" type="ColorRect" unique_id=1113324756]
-custom_minimum_size = Vector2(146, 194)
+custom_minimum_size = Vector2(109.5, 145.5)
+custom_maximum_size = Vector2(109.5, 145.5)
 color = Color(0.606433, 0.56633, 0.75255823, 1)
 script = ExtResource("1_djvur")
 

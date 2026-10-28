@@ -8,7 +8,8 @@ atlas = ExtResource("1_j5jr4")
 region = Rect2(50, 216, 47, 71)
 
 [node name="Deck" type="TextureButton" unique_id=1343693476]
-custom_minimum_size = Vector2(147, 216)
+custom_minimum_size = Vector2(110.25, 162)
+custom_maximum_size = Vector2(110.25, 162)
 offset_right = 147.0
 offset_bottom = 216.0
 texture_normal = SubResource("AtlasTexture_r0v2d")

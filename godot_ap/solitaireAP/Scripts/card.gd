@@ -26,12 +26,12 @@ func _process(delta: float) -> void:
 
 func _get_drag_data(position: Vector2):
 
-	if !self.is_child_valid():
+	if !self.is_child_valid() and !self.is_stackable_slot(self):
 		return null
 
 	var preview = self.duplicate()
 	preview.offset_transform_enabled = true
-	preview.set_offset_transform_position(Vector2(-(self.texture.get_width()/2), 0))
+	preview.set_offset_transform_position(Vector2(-(self.custom_minimum_size.x/2), 0))
 	set_drag_preview(preview)
 	self.set_modulate(Color(1,1,1,0))
 	return self
@@ -61,4 +61,8 @@ func get_last_child() -> Card:
 
 #ran by target to see what the rules on placement are
 func is_valid_placement(data: Card) -> bool:
-	return (data.value + 1 == self.value) and ((self.suit < 3 and data.suit > 2) or (self.suit > 2 and data.suit < 3))
+	return (data.value + 1 == self.value) and ((self.suit < 3 and data.suit > 2) or (self.suit > 2 and data.suit < 3)) and self.is_stackable_slot(self)
+
+#asks the slot if stacks can be moved
+func is_stackable_slot(card: Card) -> bool:
+	return self.get_parent().get_parent().is_stackable_slot(card)

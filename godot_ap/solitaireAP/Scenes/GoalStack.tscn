@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b6decu50pwib3"]
+
+[ext_resource type="Texture2D" uid="uid://cej776vfk8e8h" path="res://godot_ap/assets/cards.tres" id="1_deyun"]
+[ext_resource type="Script" uid="uid://bfv1140ncrl6f" path="res://godot_ap/solitaireAP/Scripts/goal_stack.gd" id="2_waqck"]
+
+[node name="GoalStack" type="TextureRect" unique_id=964499174]
+texture = ExtResource("1_deyun")
+script = ExtResource("2_waqck")

@@ -8,10 +8,10 @@
 [node name="Main" type="Node2D" unique_id=1570818463]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2022730133]
-offset_left = 212.0
-offset_top = 279.0
-offset_right = 958.0
-offset_bottom = 473.0
+offset_left = 276.0
+offset_top = 180.0
+offset_right = 1070.0
+offset_bottom = 374.0
 alignment = 1
 
 [node name="Slot" parent="HBoxContainer" unique_id=1113324756 instance=ExtResource("2_dt1el")]
@@ -19,26 +19,38 @@ layout_mode = 2
 
 [node name="Slot2" parent="HBoxContainer" unique_id=1682983660 instance=ExtResource("2_dt1el")]
 layout_mode = 2
+slotNumber = 1
 
 [node name="Slot3" parent="HBoxContainer" unique_id=320432481 instance=ExtResource("2_dt1el")]
 layout_mode = 2
+slotNumber = 2
 
 [node name="Slot4" parent="HBoxContainer" unique_id=572730274 instance=ExtResource("2_dt1el")]
 layout_mode = 2
+slotNumber = 3
 
 [node name="Slot5" parent="HBoxContainer" unique_id=491332799 instance=ExtResource("2_dt1el")]
 layout_mode = 2
+slotNumber = 4
+
+[node name="Slot6" parent="HBoxContainer" unique_id=1594892272 instance=ExtResource("2_dt1el")]
+layout_mode = 2
+slotNumber = 5
+
+[node name="Slot7" parent="HBoxContainer" unique_id=582312156 instance=ExtResource("2_dt1el")]
+layout_mode = 2
+slotNumber = 6
 
 [node name="Deck" parent="." unique_id=259796299 node_paths=PackedStringArray("deckSlot") instance=ExtResource("2_ystg3")]
-offset_left = 46.0
-offset_top = 31.0
-offset_right = 193.0
-offset_bottom = 247.0
+offset_left = 27.0
+offset_top = 18.0
+offset_right = 137.25
+offset_bottom = 180.0
 deckSlot = NodePath("../DeckSlot")
 card = ExtResource("3_2jeuk")
 
 [node name="DeckSlot" parent="." unique_id=1896127673 instance=ExtResource("3_ystg3")]
-offset_left = 44.0
-offset_top = 279.0
-offset_right = 190.0
-offset_bottom = 473.0
+offset_left = 150.0
+offset_top = 32.0
+offset_right = 259.5
+offset_bottom = 177.5

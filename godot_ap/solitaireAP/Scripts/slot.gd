@@ -2,6 +2,8 @@ extends ColorRect
 
 class_name Slot
 
+@export_range(0,6) var slotNumber: int = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,3 +25,6 @@ func get_last_child():
 		return self
 	else:
 		return child_card[0].get_last_child()
+
+func is_stackable_slot(_card: Card):
+	return true
