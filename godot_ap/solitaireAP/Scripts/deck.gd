@@ -1,5 +1,7 @@
 extends TextureButton
 
+class_name Deck
+
 @export var deckSlot: Control
 @export var card: PackedScene
 
@@ -8,9 +10,10 @@ var cards: Array[Vector2i] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.initialize_Deck(13,13,13,13)
+	pass
 
 func initialize_Deck(hearts: int, diamonds: int, spades: int, clubs: int):
+	cards.clear()
 	for i in range (hearts):
 		cards.append(Vector2i(1,i+1))
 	for i in range (diamonds):
@@ -20,6 +23,7 @@ func initialize_Deck(hearts: int, diamonds: int, spades: int, clubs: int):
 	for i in range (clubs):
 		cards.append(Vector2i(4,i+1))
 	cards.shuffle()
+	self.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

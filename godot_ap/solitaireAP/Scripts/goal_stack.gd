@@ -5,6 +5,11 @@ var topCard = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	self.initialize_goal()
+	
+
+func initialize_goal():
+	self.topCard = 0
 	self.texture = load("res://godot_ap/assets/cards.tres")
 	var temp = AtlasTexture.new()
 	temp.atlas = self.texture.atlas

@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 
 func _get_drag_data(position: Vector2):
 
-	if !self.is_child_valid() and !self.is_stackable_slot(self):
+	if !self.is_child_valid():
 		return null
 
 	var preview = self.duplicate()
