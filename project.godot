@@ -28,13 +28,14 @@ Archipelago="*res://godot_ap/autoloads/archipelago.tscn"
 
 [display]
 
-window/size/viewport_width=374
-window/size/viewport_height=200
+window/size/viewport_width=1122
+window/size/viewport_height=600
 window/size/extend_to_title=true
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/subwindows/embed_subwindows=false
-window/stretch/aspect="expand"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep_width"
 
 [filesystem]
 

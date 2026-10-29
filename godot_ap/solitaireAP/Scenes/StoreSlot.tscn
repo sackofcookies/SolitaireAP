@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c6y6vsv7r5ry1"]
+
+[ext_resource type="PackedScene" uid="uid://b2h08vi43dg6w" path="res://godot_ap/solitaireAP/Scenes/Slot.tscn" id="1_7ucdj"]
+[ext_resource type="Script" uid="uid://8uli0q1gqvdk" path="res://godot_ap/solitaireAP/Scripts/store_slot.gd" id="2_xxqyx"]
+
+[node name="Slot" unique_id=1113324756 instance=ExtResource("1_7ucdj")]
+script = ExtResource("2_xxqyx")

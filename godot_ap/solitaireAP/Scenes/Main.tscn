@@ -4,17 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://b2h08vi43dg6w" path="res://godot_ap/solitaireAP/Scenes/Slot.tscn" id="2_dt1el"]
 [ext_resource type="PackedScene" uid="uid://dq35x1pp57yqf" path="res://godot_ap/solitaireAP/Scenes/Deck.tscn" id="2_ystg3"]
 [ext_resource type="PackedScene" uid="uid://0bcswns65mx1" path="res://godot_ap/solitaireAP/Scenes/Card.tscn" id="3_2jeuk"]
+[ext_resource type="PackedScene" uid="uid://c6y6vsv7r5ry1" path="res://godot_ap/solitaireAP/Scenes/StoreSlot.tscn" id="3_fr7ah"]
 [ext_resource type="PackedScene" uid="uid://b41sopc6lbowu" path="res://godot_ap/solitaireAP/Scenes/deck_slot.tscn" id="3_ystg3"]
 [ext_resource type="PackedScene" uid="uid://b6decu50pwib3" path="res://godot_ap/solitaireAP/Scenes/GoalStack.tscn" id="5_obd4s"]
+[ext_resource type="PackedScene" uid="uid://defia504goc4" path="res://godot_ap/ui/connect_box.tscn" id="7_w66eg"]
 
 [node name="Main" type="Node2D" unique_id=1570818463]
 script = ExtResource("1_ygqui")
 
 [node name="slots" type="HBoxContainer" parent="." unique_id=2022730133]
-offset_left = 325.0
-offset_top = 198.0
-offset_right = 1119.0
-offset_bottom = 392.0
+offset_left = 147.0
+offset_top = 197.0
+offset_right = 941.0
+offset_bottom = 391.0
 alignment = 1
 
 [node name="Slot" parent="slots" unique_id=1113324756 instance=ExtResource("2_dt1el")]
@@ -44,25 +46,32 @@ slotNumber = 5
 layout_mode = 2
 slotNumber = 6
 
-[node name="Deck" parent="." unique_id=259796299 node_paths=PackedStringArray("deckSlot") instance=ExtResource("2_ystg3")]
-offset_left = 27.0
-offset_top = 18.0
-offset_right = 137.25
-offset_bottom = 180.0
+[node name="StoreSlot" parent="." unique_id=1605113539 instance=ExtResource("3_fr7ah")]
+offset_left = 149.0
+offset_top = 17.0
+offset_right = 258.5
+offset_bottom = 162.5
+
+[node name="Deck" parent="." unique_id=259796299 node_paths=PackedStringArray("deckSlot", "storeSlot") instance=ExtResource("2_ystg3")]
+offset_left = 147.0
+offset_top = 9.0
+offset_right = 257.25
+offset_bottom = 171.0
 deckSlot = NodePath("../DeckSlot")
 card = ExtResource("3_2jeuk")
+storeSlot = NodePath("../StoreSlot")
 
 [node name="DeckSlot" parent="." unique_id=1896127673 instance=ExtResource("3_ystg3")]
-offset_left = 150.0
-offset_top = 32.0
-offset_right = 259.5
-offset_bottom = 177.5
+offset_left = 21.0
+offset_top = 27.0
+offset_right = 130.5
+offset_bottom = 172.5
 
 [node name="GoalStacks" type="HBoxContainer" parent="." unique_id=832501763]
-offset_left = 325.0
-offset_top = 32.0
-offset_right = 769.0
-offset_bottom = 176.0
+offset_left = 268.0
+offset_top = 27.0
+offset_right = 712.0
+offset_bottom = 171.0
 
 [node name="GoalStack" parent="GoalStacks" unique_id=964499174 instance=ExtResource("5_obd4s")]
 layout_mode = 2
@@ -80,10 +89,27 @@ layout_mode = 2
 suit = 4
 
 [node name="NewGame" type="Button" parent="." unique_id=756432209]
-offset_left = 952.0
-offset_top = 32.0
-offset_right = 1123.0
-offset_bottom = 72.0
+offset_left = 736.0
+offset_top = 81.0
+offset_right = 907.0
+offset_bottom = 121.0
 text = "New Game"
+
+[node name="AutoButton" type="CheckButton" parent="." unique_id=745813425]
+offset_left = 775.0
+offset_top = 134.0
+offset_right = 866.0
+offset_bottom = 177.0
+text = "auto"
+
+[node name="ConnectBox" parent="." unique_id=1154988895 instance=ExtResource("7_w66eg")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 785.0
+offset_top = 1.0
+offset_right = 1122.0
+offset_bottom = 297.0
+grow_horizontal = 0
 
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]

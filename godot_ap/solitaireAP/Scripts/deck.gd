@@ -4,6 +4,7 @@ class_name Deck
 
 @export var deckSlot: Control
 @export var card: PackedScene
+@export var storeSlot: StoreSlot
 
 #array of cards represented by vectors (suit, value)
 var cards: Array[Vector2i] = []
@@ -29,6 +30,7 @@ func initialize_Deck(hearts: int, diamonds: int, spades: int, clubs: int):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if cards.is_empty():
+		storeSlot.uncovered = true
 		self.hide()
 
 func deal(location: Target):

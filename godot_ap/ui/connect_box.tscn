@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://defia504goc4"]
+
+[ext_resource type="Script" uid="uid://cs0261v4jx4b" path="res://godot_ap/ui/slider_box.gd" id="1_43eex"]
+[ext_resource type="Script" uid="uid://do8ua21ppl1de" path="res://godot_ap/ui/custom_containers/custom_label.gd" id="2_285nh"]
+[ext_resource type="FontVariation" uid="uid://by743jyixqnxb" path="res://godot_ap/ui/themes/symbols_font.tres" id="3_xho4g"]
+[ext_resource type="Script" uid="uid://cyc8jkqjagswj" path="res://godot_ap/ui/connect_box.gd" id="4_ileg3"]
+[ext_resource type="Script" uid="uid://cety6nqnci3n6" path="res://godot_ap/ui/updown_lineedit.gd" id="5_gx6yj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cnti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ksdsn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fs71"]
+font_size = 20
+font_color = Color(1, 0.443684, 0.375096, 1)
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ConnectBox" type="MarginContainer" unique_id=1154988895]
+clip_contents = true
+size_flags_horizontal = 8
+size_flags_vertical = 0
+mouse_filter = 2
+script = ExtResource("1_43eex")
+
+[node name="Row" type="HBoxContainer" parent="." unique_id=1006943946]
+clip_contents = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = -1
+
+[node name="Handle" type="PanelContainer" parent="Row" unique_id=1184873123]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Margin" type="MarginContainer" parent="Row/Handle" unique_id=2074960189]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 0
+
+[node name="CustomLabel" type="Panel" parent="Row/Handle/Margin" unique_id=620549171]
+custom_minimum_size = Vector2(24, 54)
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("2_285nh")
+text = "🞀"
+font = ExtResource("3_xho4g")
+font_size = 40
+pos = Vector2(0, 40)
+metadata/_custom_type_script = "uid://do8ua21ppl1de"
+
+[node name="Box" type="PanelContainer" parent="Row" unique_id=134400477]
+clip_contents = true
+layout_mode = 2
+
+[node name="Margins" type="MarginContainer" parent="Row/Box" unique_id=339644037]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="Row/Box/Margins" unique_id=1112494808]
+layout_mode = 2
+
+[node name="Content" type="GridContainer" parent="Row/Box/Margins/VBox" unique_id=1230485310]
+layout_mode = 2
+theme_override_constants/v_separation = 8
+columns = 2
+script = ExtResource("4_ileg3")
+
+[node name="Label" type="Label" parent="Row/Box/Margins/VBox/Content" unique_id=677803583]
+layout_mode = 2
+text = "IP:"
+horizontal_alignment = 2
+
+[node name="IP_Box" type="LineEdit" parent="Row/Box/Margins/VBox/Content" unique_id=217272761]
+custom_minimum_size = Vector2(200, 33)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Pwd_Box")
+focus_neighbor_bottom = NodePath("../Port_Box")
+focus_next = NodePath("../Port_Box")
+focus_previous = NodePath("../Pwd_Box")
+theme_override_font_sizes/font_size = 20
+script = ExtResource("5_gx6yj")
+
+[node name="Label2" type="Label" parent="Row/Box/Margins/VBox/Content" unique_id=1643158333]
+layout_mode = 2
+text = "Port:"
+horizontal_alignment = 2
+
+[node name="Port_Box" type="LineEdit" parent="Row/Box/Margins/VBox/Content" unique_id=1575517060]
+custom_minimum_size = Vector2(200, 33)
+layout_mode = 2
+focus_neighbor_top = NodePath("../IP_Box")
+focus_neighbor_bottom = NodePath("../Slot_Box")
+focus_next = NodePath("../Slot_Box")
+focus_previous = NodePath("../IP_Box")
+theme_override_font_sizes/font_size = 20
+script = ExtResource("5_gx6yj")
+
+[node name="Label3" type="Label" parent="Row/Box/Margins/VBox/Content" unique_id=105183498]
+layout_mode = 2
+text = "Slot:"
+horizontal_alignment = 2
+
+[node name="Slot_Box" type="LineEdit" parent="Row/Box/Margins/VBox/Content" unique_id=469040844]
+custom_minimum_size = Vector2(200, 33)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Port_Box")
+focus_neighbor_bottom = NodePath("../Pwd_Box")
+focus_next = NodePath("../Pwd_Box")
+focus_previous = NodePath("../Port_Box")
+theme_override_font_sizes/font_size = 20
+script = ExtResource("5_gx6yj")
+
+[node name="HBox" type="HBoxContainer" parent="Row/Box/Margins/VBox/Content" unique_id=851451798]
+layout_mode = 2
+
+[node name="ShowPwd" type="CheckBox" parent="Row/Box/Margins/VBox/Content/HBox" unique_id=1996325019]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1cnti")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ksdsn")
+
+[node name="Label4" type="Label" parent="Row/Box/Margins/VBox/Content/HBox" unique_id=1607160881]
+layout_mode = 2
+text = "Passwd:"
+horizontal_alignment = 2
+
+[node name="Pwd_Box" type="LineEdit" parent="Row/Box/Margins/VBox/Content" unique_id=349615672]
+custom_minimum_size = Vector2(200, 33)
+layout_mode = 2
+focus_neighbor_top = NodePath("../Slot_Box")
+focus_neighbor_bottom = NodePath("../IP_Box")
+focus_next = NodePath("../IP_Box")
+focus_previous = NodePath("../Slot_Box")
+theme_override_font_sizes/font_size = 20
+script = ExtResource("5_gx6yj")
+
+[node name="_nil" type="Control" parent="Row/Box/Margins/VBox/Content" unique_id=1387497210]
+layout_mode = 2
+
+[node name="ErrorLabel" type="Label" parent="Row/Box/Margins/VBox/Content" unique_id=1766281381]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_8fs71")
+
+[node name="ButtonRow" type="HBoxContainer" parent="Row/Box/Margins/VBox" unique_id=1455162806]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConnectBtn" type="Button" parent="Row/Box/Margins/VBox/ButtonRow" unique_id=1249203588]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Connect"
+
+[node name="DisconnectBtn" type="Button" parent="Row/Box/Margins/VBox/ButtonRow" unique_id=1507793578]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Disconnect"
+
+[connection signal="text_submitted" from="Row/Box/Margins/VBox/Content/IP_Box" to="Row/Box/Margins/VBox/Content" method="try_connection" unbinds=1]
+[connection signal="text_submitted" from="Row/Box/Margins/VBox/Content/Port_Box" to="Row/Box/Margins/VBox/Content" method="try_connection" unbinds=1]
+[connection signal="text_submitted" from="Row/Box/Margins/VBox/Content/Slot_Box" to="Row/Box/Margins/VBox/Content" method="try_connection" unbinds=1]
+[connection signal="text_submitted" from="Row/Box/Margins/VBox/Content/Pwd_Box" to="Row/Box/Margins/VBox/Content" method="try_connection" unbinds=1]
+[connection signal="pressed" from="Row/Box/Margins/VBox/ButtonRow/ConnectBtn" to="Row/Box/Margins/VBox/Content" method="try_connection"]
+[connection signal="pressed" from="Row/Box/Margins/VBox/ButtonRow/DisconnectBtn" to="Row/Box/Margins/VBox/Content" method="kill_connection"]
