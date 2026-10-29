@@ -39,6 +39,16 @@ func _process(delta: float) -> void:
 					self.deck.deal(slot.get_last_child().get_node("Target"))
 		self.toStart = false
 
+	var temp = deckSlot.get_last_child()
+	if temp != deckSlot and temp.value == goals[temp.suit-1].topCard+1:
+		temp.queue_free()
+		goals[temp.suit-1].sink()
+	for slot in slots:
+		var card = slot.get_last_child()
+		if card != slot and card.value == goals[card.suit-1].topCard+1:
+			card.queue_free()
+			goals[card.suit-1].sink()
+
 
 func _on_new_game_pressed() -> void:
 
