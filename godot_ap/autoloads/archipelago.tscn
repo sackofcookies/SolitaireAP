@@ -5,6 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_pmgvy"]
 script = ExtResource("2_2e7gq")
+minor = 1
 
 [sub_resource type="Resource" id="Resource_m1v20"]
 script = ExtResource("2_2e7gq")
