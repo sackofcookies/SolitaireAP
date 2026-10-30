@@ -5,11 +5,16 @@ from typing import Any
 from worlds.AutoWorld import World
 
 # Imports of your world's files must be relative.
-from . import items, locations, regions, rules, web_world
+from . import items, locations, regions, rules
+
+from Options import PerGameCommonOptions
 
 
 class SolitaireAPWorld(World):
     game = "SolitaireAP"
+
+    options_dataclass = PerGameCommonOptions
+    options: PerGameCommonOptions
 
     location_name_to_id = locations.LOCATION_NAME_TO_ID
     item_name_to_id = items.ITEM_NAME_TO_ID

@@ -9,18 +9,17 @@ if TYPE_CHECKING:
 
 
 ITEM_NAME_TO_ID = {}
-DEFAULT_ITEM_CLASSIFICATIONS = {}
 
-for i in range(3,14):
-    ITEM_NAME_TO_ID["Progressive Hearts"] = i
-    ITEM_NAME_TO_ID["Progressive Diamonds"] = i + 13
-    ITEM_NAME_TO_ID["Progressive Spades"] = i + 26
-    ITEM_NAME_TO_ID["Progressive Clubs"] = i + 39
+ITEM_NAME_TO_ID["Progressive Hearts"] = 1
+ITEM_NAME_TO_ID["Progressive Diamonds"] = 2
+ITEM_NAME_TO_ID["Progressive Spades"] = 3
+ITEM_NAME_TO_ID["Progressive Clubs"] = 4
 
 for i in range(3,8):
-    ITEM_NAME_TO_ID[f"Slot {i}"] = i + 52
+    ITEM_NAME_TO_ID[f"Slot {i}"] = i + 2
 
-ITEM_NAME_TO_ID["Storage Slot"] = 61
+ITEM_NAME_TO_ID["Storage Slot"] = 11
+ITEM_NAME_TO_ID["super cool item"] = 12
 
 class SolitaireAPItem(Item):
     game = "SolitaireAP"
@@ -31,8 +30,18 @@ def create_item_with_correct_classification(world: SolitaireAPWorld, name: str) 
 
 def create_all_items(world: SolitaireAPWorld) -> None:
     itempool: list[Item] = []
-    for item in ITEM_NAME_TO_ID:
-        itempool.append(world.create_item(item))
+
+    for i in range(1,12):
+        itempool.append(world.create_item("Progressive Hearts"))
+        itempool.append(world.create_item("Progressive Diamonds"))
+        itempool.append(world.create_item("Progressive Spades"))
+        itempool.append(world.create_item("Progressive Clubs"))
+
+    for i in range(3,8):
+        itempool.append(world.create_item(f"Slot {i}"))
+
+    itempool.append(world.create_item("Storage Slot"))
+
 
     number_of_items = len(itempool)
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))

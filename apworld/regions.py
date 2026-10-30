@@ -10,3 +10,4 @@ if TYPE_CHECKING:
 
 def create_all_regions(world: SolitaireAPWorld) -> None:
     board = Region("board", world.player, world.multiworld)
+    world.multiworld.regions += [board]

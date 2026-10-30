@@ -27,7 +27,7 @@ LOCATION_NAME_TO_ID["Complete 52 card game"] = 58
 
 
 class SolitaireAPLocation(Location):
-    game = SolitaireAP
+    game = "SolitaireAP"
 
 def get_location_names_with_ids(location_names: list[str]) -> dict[str, int | None]:
     return {location_name: LOCATION_NAME_TO_ID[location_name] for location_name in location_names}
@@ -40,4 +40,4 @@ def create_all_locations(world: SolitaireAPWorld) -> None:
 def create_regular_locations(world: SolitaireAPWorld) -> None:
     board = world.get_region("board")
 
-    board.add_locations(list(LOCATION_NAME_TO_ID.values()), SolitaireAPLocation)
+    board.add_locations(LOCATION_NAME_TO_ID, SolitaireAPLocation)

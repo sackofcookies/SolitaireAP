@@ -37,6 +37,10 @@ func clean_up():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if self.toStart:
+		if Archipelago.status == Archipelago.APStatus.PLAYING:
+			var items = Archipelago.conn.received_items
+			
+
 		self.deck.initialize_Deck(self.hearts, self.diamonds, self.spades, self.clubs)
 		for slot in slots:
 			if slot.unlocked:
