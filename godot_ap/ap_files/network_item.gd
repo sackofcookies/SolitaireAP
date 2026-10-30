@@ -16,6 +16,7 @@ var dest_player_id: int
 var flags: int
 
 
+
 ## Get a text description of this item's [member flags].
 func get_classification() -> String:
 	return AP.get_item_classification(flags)
