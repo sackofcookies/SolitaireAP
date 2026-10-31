@@ -9,11 +9,11 @@ extends Node
 
 ## The game name to connect to. Empty string for [code]TextOnly[/code] / [code]Tracker[/code] /
 ## [code]HintGame[/code] clients.
-@export var AP_GAME_NAME := ""
+@export var AP_GAME_NAME := "solitaireAP"
 ## The tags for your game.
 @export var AP_GAME_TAGS: Array[String] = []
 ## The version of your client. Arbitrary number for you to manage.
-@export var AP_CLIENT_VERSION := Version.val(0,0,0)
+@export var AP_CLIENT_VERSION := Version.val(0,1,0)
 ## The target AP version. Not arbitrary - used in [code]Connect[/code] packet.
 @export var AP_VERSION := Version.val(0,5,0)
 ## The [enum ItemHandling] to use when connecting.
@@ -898,6 +898,7 @@ static func get_datacache(game: String) -> DataCache:
 func _receive_item(index: int, item: NetworkItem) -> bool:
 	assert(item.dest_player_id == conn.player_id)
 	if conn._received_index(index):
+		conn.received_items[index].repeat()
 		return false # Already recieved, skip
 	var data: DataCache = conn.get_gamedata_for_player(conn.player_id)
 	var msg := ""

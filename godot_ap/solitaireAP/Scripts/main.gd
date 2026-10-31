@@ -23,10 +23,7 @@ func _ready() -> void:
 	self.deck = self.get_node("Deck")
 	self.storeSlot = self.get_node("StoreSlot")
 	self.autoButt = self.get_node("AutoButton")
-	Archipelago.conn.obtained_item.connect(_on_item_obtained)
 
-func _on_item_obtained():
-	
 
 func clean_up():
 	for slot in self.slots:
@@ -43,6 +40,7 @@ func clean_up():
 func _process(delta: float) -> void:
 	if self.toStart:
 		if Archipelago.status == Archipelago.APStatus.PLAYING:
+			
 			for i in range(3,8):
 				if Archipelago.conn._received_index(i+2):
 					self.slots[i-1].unlocked = true

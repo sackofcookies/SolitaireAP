@@ -16,6 +16,7 @@ script = ExtResource("1_41ph8")
 AP_GAME_NAME = "SolitaireAP"
 AP_CLIENT_VERSION = SubResource("Resource_pmgvy")
 AP_VERSION = SubResource("Resource_m1v20")
+AP_PRINT_ITEMS_ON_CONNECT = true
 
 [node name="HangTimer" type="Timer" parent="." unique_id=1088612592]
 wait_time = 5.0
