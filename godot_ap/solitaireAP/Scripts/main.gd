@@ -15,6 +15,12 @@ var autoButt
 var toStart = false
 var midgame = false
 
+var heartsItems: Array
+var diamondsItems: Array
+var spadesItems: Array
+var clubsItems: Array
+var slotsItems: Array
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.slots = self.get_node("slots").get_children()
@@ -23,6 +29,38 @@ func _ready() -> void:
 	self.deck = self.get_node("Deck")
 	self.storeSlot = self.get_node("StoreSlot")
 	self.autoButt = self.get_node("AutoButton")
+	Archipelago.connected.connect(_on_connected)
+	Archipelago.disconnected.connect(_on_disconnected)
+
+func _on_disconnected():
+	heartsItems.clear()
+	diamondsItems.clear()
+	spadesItems.clear()
+	clubsItems.clear()
+	slotsItems.clear()
+	self.clean_up()
+
+func _on_connected(conn, json):
+	Archipelago.conn.obtained_item.connect(_on_obtained_item)
+
+
+func _on_obtained_item(item):
+	self._add_item(item)
+
+
+func _add_item(item: NetworkItem):
+	if item.id == 1:
+		heartsItems.append(item)
+	if item.id == 2:
+		diamondsItems.append(item)
+	if item.id == 3:
+		spadesItems.append(item)
+	if item.id == 4:
+		clubsItems.append(item)
+	
+	if item.id > 4 and item.id < 12:
+		slotsItems.append(item)
+
 
 
 func clean_up():
@@ -42,28 +80,23 @@ func _process(delta: float) -> void:
 		if Archipelago.status == Archipelago.APStatus.PLAYING:
 			
 			for i in range(3,8):
-				if Archipelago.conn._received_index(i+2):
-					self.slots[i-1].unlocked = true
-				else:
-					self.slots[i-1].unlocked = false
-			if Archipelago.conn._received_index(11):
+				self.slots[i-1].unlocked = false
+			self.storeSlot.unlocked = false
+			for slot in slotsItems:
+				if slot.id == 11:
 					self.storeSlot.unlocked = true
-			else:
-				self.storeSlot.unlocked = false
+				else:
+					self.slots[slot.id-3].unlocked = true
 
 			hearts = 2
-			if Archipelago.conn._received_index(1):
-				hearts += Archipelago.conn.received_items[1].amount
+			hearts += heartsItems.size()	
 			diamonds = 2
-			if Archipelago.conn._received_index(2):
-				diamonds += Archipelago.conn.received_items[2].amount
+			diamonds += diamondsItems.size()
 			spades = 2
-			if Archipelago.conn._received_index(3):
-				print(Archipelago.conn.received_items[3].amount)
-				spades += Archipelago.conn.received_items[3].amount
+			spades += spadesItems.size()
+			print(spadesItems)
 			clubs = 2
-			if Archipelago.conn._received_index(4):
-				clubs += Archipelago.conn.received_items[4].amount
+			clubs += clubsItems.size()
 			
 		self.deck.initialize_Deck(self.hearts, self.diamonds, self.spades, self.clubs)
 		for slot in slots:

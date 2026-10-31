@@ -898,7 +898,6 @@ static func get_datacache(game: String) -> DataCache:
 func _receive_item(index: int, item: NetworkItem) -> bool:
 	assert(item.dest_player_id == conn.player_id)
 	if conn._received_index(index):
-		conn.received_items[index].repeat()
 		return false # Already recieved, skip
 	var data: DataCache = conn.get_gamedata_for_player(conn.player_id)
 	var msg := ""

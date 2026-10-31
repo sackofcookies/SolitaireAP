@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://b6decu50pwib3" path="res://godot_ap/solitaireAP/Scenes/GoalStack.tscn" id="5_obd4s"]
 [ext_resource type="PackedScene" uid="uid://defia504goc4" path="res://godot_ap/ui/connect_box.tscn" id="7_w66eg"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_0flio"]
+font_size = 13
+
 [node name="Main" type="Node2D" unique_id=1570818463]
 script = ExtResource("1_ygqui")
 
@@ -111,5 +114,13 @@ offset_top = 1.0
 offset_right = 1122.0
 offset_bottom = 297.0
 grow_horizontal = 0
+
+[node name="Label" type="Label" parent="." unique_id=1869969188]
+offset_left = 1.0
+offset_top = 573.0
+offset_right = 676.0
+offset_bottom = 608.0
+text = "\"(Pixel) Poker Cards\" by IvoryRed https://ivoryred.itch.io/, licensed under CC BY 4.0."
+label_settings = SubResource("LabelSettings_0flio")
 
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]

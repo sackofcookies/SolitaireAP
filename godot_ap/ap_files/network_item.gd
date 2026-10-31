@@ -15,10 +15,6 @@ var dest_player_id: int
 ## more information.
 var flags: int
 
-var amount: int
-
-func repeat():
-	self.amount += 1
 
 
 ## Get a text description of this item's [member flags].
