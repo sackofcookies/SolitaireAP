@@ -27,7 +27,8 @@ func sink():
 	self.set_modulate(Color(1,1,1,1.0))
 	topCard += 1
 	if Archipelago.status == Archipelago.APStatus.PLAYING:
-		Archipelago.collect_location(topCard + ((suit-1)*13))
+		if !Archipelago.location_checked(topCard + ((suit-1)*13)):
+			Archipelago.collect_location(topCard + ((suit-1)*13))
 	self.texture.region.position = Vector2(48*(topCard-1), 64*(self.suit-1))
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:

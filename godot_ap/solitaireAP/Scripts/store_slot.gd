@@ -17,7 +17,7 @@ func initialize_slot():
 	super()
 
 func is_valid_placement(data: Card) -> bool:
-	return unlocked and uncovered
+	return unlocked and uncovered and data.get_node("Target").get_children().is_empty()
 
 func is_stackable_slot(card: Card):
 	return false

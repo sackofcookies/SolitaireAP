@@ -11,6 +11,8 @@ var deckSlot: DeckSlot
 var deck: Deck
 var storeSlot: StoreSlot
 var autoButt
+var deathLink
+var deathLinkTimout: Timer
 
 var toStart = false
 var midgame = false
@@ -29,6 +31,8 @@ func _ready() -> void:
 	self.deck = self.get_node("Deck")
 	self.storeSlot = self.get_node("StoreSlot")
 	self.autoButt = self.get_node("AutoButton")
+	self.deathLink = self.get_node("DeathlinkButton")
+	self.deathLinkTimout = self.get_node("DeathLinkTimeout")
 	Archipelago.connected.connect(_on_connected)
 	Archipelago.disconnected.connect(_on_disconnected)
 
@@ -42,6 +46,11 @@ func _on_disconnected():
 
 func _on_connected(conn, json):
 	Archipelago.conn.obtained_item.connect(_on_obtained_item)
+	Archipelago.conn.deathlink.connect(_on_deathlink)
+
+func _on_deathlink(source: String, cause: String, json: Dictionary):
+	if deathLink.button_pressed:
+		self.clean_up()
 
 
 func _on_obtained_item(item):
@@ -64,6 +73,8 @@ func _add_item(item: NetworkItem):
 
 
 func clean_up():
+	midgame = false
+	deck.cards.clear()
 	for slot in self.slots:
 		slot.initialize_slot()
 
@@ -151,6 +162,15 @@ func _process(delta: float) -> void:
 
 
 func _on_new_game_pressed() -> void:
-
+	if deathLink.button_pressed and deathLinkTimout.is_stopped() and midgame:
+		deathLinkTimout.start()
+		Archipelago.conn.send_deathlink()
 	self.clean_up()
 	self.toStart = true
+
+
+func _on_deathlink_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		Archipelago.set_tag("DeathLink", true)
+	else:
+		Archipelago.set_tag("DeathLink", false)
