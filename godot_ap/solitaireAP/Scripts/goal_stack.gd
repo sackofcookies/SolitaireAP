@@ -3,9 +3,13 @@ extends TextureRect
 var topCard = 0
 @export_range(1,4) var suit = 1
 
+
+var particles: CPUParticles2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.initialize_goal()
+	self.particles = self.get_node("CheckParticles")
 	
 
 func initialize_goal():
@@ -29,6 +33,7 @@ func sink():
 	if Archipelago.status == Archipelago.APStatus.PLAYING:
 		if !Archipelago.location_checked(topCard + ((suit-1)*13)):
 			Archipelago.collect_location(topCard + ((suit-1)*13))
+			particles.emitting = true
 	self.texture.region.position = Vector2(48*(topCard-1), 64*(self.suit-1))
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:

@@ -2,9 +2,30 @@
 
 [ext_resource type="Texture2D" uid="uid://cej776vfk8e8h" path="res://godot_ap/assets/cards.tres" id="1_deyun"]
 [ext_resource type="Script" uid="uid://bfv1140ncrl6f" path="res://godot_ap/solitaireAP/Scripts/goal_stack.gd" id="2_waqck"]
+[ext_resource type="Texture2D" uid="uid://b6fle1nlitxyy" path="res://godot_ap/assets/apLogo.png" id="3_5tg4b"]
 
 [node name="GoalStack" type="TextureRect" unique_id=964499174]
 custom_minimum_size = Vector2(108, 144)
 custom_maximum_size = Vector2(108, 144)
 texture = ExtResource("1_deyun")
 script = ExtResource("2_waqck")
+
+[node name="CheckParticles" type="CPUParticles2D" parent="." unique_id=1509407804]
+z_index = 4096
+z_as_relative = false
+position = Vector2(55, 69)
+emitting = false
+amount = 20
+texture = ExtResource("3_5tg4b")
+one_shot = true
+randomness = 0.65
+direction = Vector2(0, -1)
+spread = 113.7
+initial_velocity_min = 99.01
+initial_velocity_max = 564.35
+angular_velocity_min = -270.89
+angular_velocity_max = 99.8
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
