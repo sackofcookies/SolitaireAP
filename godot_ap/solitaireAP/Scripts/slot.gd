@@ -36,4 +36,5 @@ func is_stackable_slot(_card: Card):
 func initialize_slot():
 	var temp = self.get_node("Target").get_children()
 	for card in temp:
+		self.get_node("Target").remove_child(card)
 		card.queue_free()
