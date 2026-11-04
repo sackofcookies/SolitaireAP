@@ -37,7 +37,7 @@ func sink():
 	self.texture.region.position = Vector2(48*(topCard-1), 64*(self.suit-1))
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
-	if data.suit == self.suit and data.value == (self.topCard + 1):
+	if data.suit == self.suit and data.value == (self.topCard + 1) and data.get_node("Target").get_children().is_empty():
 		return true
 	else:
 		return false
