@@ -105,7 +105,6 @@ func _process(delta: float) -> void:
 			diamonds += diamondsItems.size()
 			spades = 2
 			spades += spadesItems.size()
-			print(spadesItems)
 			clubs = 2
 			clubs += clubsItems.size()
 			
