@@ -174,3 +174,7 @@ func _on_deathlink_button_toggled(toggled_on: bool) -> void:
 		Archipelago.set_tag("DeathLink", true)
 	else:
 		Archipelago.set_tag("DeathLink", false)
+
+
+func _on_console_button_pressed() -> void:
+	Archipelago.open_console()

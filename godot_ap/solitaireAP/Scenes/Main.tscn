@@ -92,10 +92,10 @@ layout_mode = 2
 suit = 4
 
 [node name="NewGame" type="Button" parent="." unique_id=756432209]
-offset_left = 736.0
-offset_top = 81.0
-offset_right = 907.0
-offset_bottom = 121.0
+offset_left = 759.0
+offset_top = 38.0
+offset_right = 930.0
+offset_bottom = 78.0
 text = "New Game"
 
 [node name="AutoButton" type="CheckButton" parent="." unique_id=745813425]
@@ -120,7 +120,15 @@ offset_right = 966.0
 offset_bottom = 177.0
 text = "DeathLink"
 
+[node name="ConsoleButton" type="Button" parent="." unique_id=38089745]
+offset_left = 759.0
+offset_top = 87.0
+offset_right = 930.0
+offset_bottom = 127.0
+text = "Open Console"
+
 [node name="ConnectBox" parent="." unique_id=1154988895 instance=ExtResource("7_w66eg")]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -135,3 +143,4 @@ wait_time = 60.0
 
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="toggled" from="DeathlinkButton" to="." method="_on_deathlink_button_toggled"]
+[connection signal="pressed" from="ConsoleButton" to="." method="_on_console_button_pressed"]
