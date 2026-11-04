@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bo7ruxwg4bdtt"]
+
+[ext_resource type="Texture2D" uid="uid://cej776vfk8e8h" path="res://godot_ap/assets/cards.tres" id="1_co0t1"]
+[ext_resource type="Script" uid="uid://ctluufbhaatac" path="res://godot_ap/solitaireAP/Scripts/moving_card.gd" id="2_0itig"]
+
+[node name="MovingCard" type="Sprite2D" unique_id=1253694652]
+z_index = 1000
+scale = Vector2(2.25, 2.25)
+texture = ExtResource("1_co0t1")
+centered = false
+offset = Vector2(-70, -20)
+script = ExtResource("2_0itig")

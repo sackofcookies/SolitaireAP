@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nr2w6mt2ggvs"]
 
-[ext_resource type="Script" uid="uid://dpkilj0hcvpc0" path="res://Scripts/target.gd" id="1_3saft"]
+[ext_resource type="Script" uid="uid://dpkilj0hcvpc0" path="res://godot_ap/solitaireAP/Scripts/target.gd" id="1_3saft"]
 
 [node name="Target" type="VBoxContainer" unique_id=2112513271]
 anchors_preset = 15

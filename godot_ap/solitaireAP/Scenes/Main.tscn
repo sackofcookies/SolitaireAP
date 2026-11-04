@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c6y6vsv7r5ry1" path="res://godot_ap/solitaireAP/Scenes/StoreSlot.tscn" id="3_fr7ah"]
 [ext_resource type="PackedScene" uid="uid://b41sopc6lbowu" path="res://godot_ap/solitaireAP/Scenes/deck_slot.tscn" id="3_ystg3"]
 [ext_resource type="PackedScene" uid="uid://b6decu50pwib3" path="res://godot_ap/solitaireAP/Scenes/GoalStack.tscn" id="5_obd4s"]
+[ext_resource type="PackedScene" uid="uid://bo7ruxwg4bdtt" path="res://godot_ap/solitaireAP/Scenes/MovingCard.tscn" id="6_6hi2m"]
 [ext_resource type="PackedScene" uid="uid://defia504goc4" path="res://godot_ap/ui/connect_box.tscn" id="7_w66eg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0flio"]
@@ -63,6 +64,7 @@ offset_bottom = 171.0
 deckSlot = NodePath("../DeckSlot")
 card = ExtResource("3_2jeuk")
 storeSlot = NodePath("../StoreSlot")
+movingCard = ExtResource("6_6hi2m")
 
 [node name="DeckSlot" parent="." unique_id=1896127673 instance=ExtResource("3_ystg3")]
 offset_left = 21.0
