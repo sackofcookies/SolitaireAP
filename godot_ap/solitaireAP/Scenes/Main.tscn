@@ -16,39 +16,56 @@ font_size = 13
 [node name="Main" type="Node2D" unique_id=1570818463]
 script = ExtResource("1_ygqui")
 
-[node name="slots" type="HBoxContainer" parent="." unique_id=2022730133]
-offset_left = 147.0
-offset_top = 197.0
-offset_right = 941.0
-offset_bottom = 391.0
+[node name="HScrollBar" type="HScrollBar" parent="." unique_id=1078839268]
+offset_left = 155.0
+offset_top = 201.0
+offset_right = 965.0
+offset_bottom = 209.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=547851590]
+offset_left = 155.0
+offset_top = 214.0
+offset_right = 965.0
+offset_bottom = 638.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="slots" type="HBoxContainer" parent="ScrollContainer" unique_id=2022730133]
+layout_mode = 2
 alignment = 1
 
-[node name="Slot" parent="slots" unique_id=1113324756 instance=ExtResource("2_dt1el")]
+[node name="Slot" parent="ScrollContainer/slots" unique_id=1113324756 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 
-[node name="Slot2" parent="slots" unique_id=1682983660 instance=ExtResource("2_dt1el")]
+[node name="Slot2" parent="ScrollContainer/slots" unique_id=1682983660 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 1
 
-[node name="Slot3" parent="slots" unique_id=320432481 instance=ExtResource("2_dt1el")]
+[node name="Slot3" parent="ScrollContainer/slots" unique_id=320432481 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 2
 
-[node name="Slot4" parent="slots" unique_id=572730274 instance=ExtResource("2_dt1el")]
+[node name="Slot4" parent="ScrollContainer/slots" unique_id=572730274 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 3
 
-[node name="Slot5" parent="slots" unique_id=491332799 instance=ExtResource("2_dt1el")]
+[node name="Slot5" parent="ScrollContainer/slots" unique_id=491332799 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 4
 
-[node name="Slot6" parent="slots" unique_id=1594892272 instance=ExtResource("2_dt1el")]
+[node name="Slot6" parent="ScrollContainer/slots" unique_id=1594892272 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 5
 
-[node name="Slot7" parent="slots" unique_id=582312156 instance=ExtResource("2_dt1el")]
+[node name="Slot7" parent="ScrollContainer/slots" unique_id=582312156 instance=ExtResource("2_dt1el")]
 layout_mode = 2
 slotNumber = 6
+
+[node name="Slot8" parent="ScrollContainer/slots" unique_id=1409512630 instance=ExtResource("2_dt1el")]
+layout_mode = 2
+
+[node name="Slot9" parent="ScrollContainer/slots" unique_id=2028809025 instance=ExtResource("2_dt1el")]
+layout_mode = 2
 
 [node name="StoreSlot" parent="." unique_id=1605113539 instance=ExtResource("3_fr7ah")]
 offset_left = 149.0

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://djhbhbp8r378m"]
+
+[ext_resource type="Script" uid="uid://cewosysldsr2s" path="res://godot_ap/solitaireAP/Scripts/solitaire_manager.gd" id="1_qgpox"]
+
+[node name="SolitaireManager" type="Node" unique_id=1146815628]
+script = ExtResource("1_qgpox")

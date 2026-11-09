@@ -25,7 +25,8 @@ var slotsItems: Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	self.slots = self.get_node("slots").get_children()
+	self.slots = self.get_node("ScrollContainer").get_node("slots").get_children()
+	self.get_node("ScrollContainer").get_h_scroll_bar().share(self.get_node("HScrollBar"))
 	self.goals = self.get_node("GoalStacks").get_children()
 	self.deckSlot = self.get_node("DeckSlot")
 	self.deck = self.get_node("Deck")

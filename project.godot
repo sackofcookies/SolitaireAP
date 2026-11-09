@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Archipelago="*res://godot_ap/autoloads/archipelago.tscn"
+SolitaireManager="*uid://djhbhbp8r378m"
 
 [display]
 
