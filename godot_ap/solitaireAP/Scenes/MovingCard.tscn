@@ -4,9 +4,7 @@
 [ext_resource type="Script" uid="uid://ctluufbhaatac" path="res://godot_ap/solitaireAP/Scripts/moving_card.gd" id="2_0itig"]
 
 [node name="MovingCard" type="Sprite2D" unique_id=1253694652]
-z_index = 1000
 scale = Vector2(2.25, 2.25)
 texture = ExtResource("1_co0t1")
 centered = false
-offset = Vector2(-70, -20)
 script = ExtResource("2_0itig")

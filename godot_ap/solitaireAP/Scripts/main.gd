@@ -128,6 +128,11 @@ func _process(delta: float) -> void:
 			won = false
 		if storeSlot.get_last_child() != storeSlot:
 			won = false
+		
+		if won:
+			for goal in goals:
+				goal.initialize_goal()
+				goal.win()
 
 		if won and Archipelago.status == Archipelago.APStatus.PLAYING:
 			var total = hearts + spades + diamonds + clubs

@@ -3,6 +3,24 @@
 [ext_resource type="Texture2D" uid="uid://cej776vfk8e8h" path="res://godot_ap/assets/cards.tres" id="1_deyun"]
 [ext_resource type="Script" uid="uid://bfv1140ncrl6f" path="res://godot_ap/solitaireAP/Scripts/goal_stack.gd" id="2_waqck"]
 [ext_resource type="Texture2D" uid="uid://b6fle1nlitxyy" path="res://godot_ap/assets/apLogo.png" id="3_5tg4b"]
+[ext_resource type="Texture2D" uid="uid://d2pp6yyls6kwc" path="res://godot_ap/assets/1.2 Poker cards.png" id="4_qwhvf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0aaxp"]
+particles_animation = true
+particles_anim_h_frames = 15
+particles_anim_v_frames = 5
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1kdud"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -131.61002
+angular_velocity_max = 216.76997
+gravity = Vector3(0, 500, 0)
+scale_min = 2.25
+scale_max = 2.25
+anim_offset_max = 1.0
 
 [node name="GoalStack" type="TextureRect" unique_id=964499174]
 custom_minimum_size = Vector2(108, 144)
@@ -29,3 +47,12 @@ angle_min = -720.0
 angle_max = 720.0
 scale_amount_min = 0.5
 scale_amount_max = 1.5
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2067751450]
+material = SubResource("CanvasItemMaterial_0aaxp")
+position = Vector2(54, 71)
+emitting = false
+amount = 13
+texture = ExtResource("4_qwhvf")
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_1kdud")

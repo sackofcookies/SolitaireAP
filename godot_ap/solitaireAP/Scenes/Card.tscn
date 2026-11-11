@@ -25,3 +25,6 @@ offset_bottom = 165.0
 grow_horizontal = 1
 grow_vertical = 1
 alignment = 1
+
+[node name="animationTarget" type="Node2D" parent="." unique_id=852437912]
+position = Vector2(-1, 19)

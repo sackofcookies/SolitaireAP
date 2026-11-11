@@ -3,6 +3,8 @@ class_name Card
 @export_range(1,13) var value: int = 1
 @export_range(1,4) var suit: int = 1
 
+@onready
+var animationTarget = $animationTarget
 
 func set_card(new_value: int, new_suit: int):
 	self.value = new_value

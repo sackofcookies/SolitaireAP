@@ -19,7 +19,7 @@ config/description="Solitaire Implementation for Archipelago"
 config/version="0.3.2"
 run/main_scene="uid://clur1yu1pnt5y"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://dew6j7tp8x8co"
 
 [autoload]
 

@@ -17,23 +17,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if active and !self.is_queued_for_deletion():
-		if represents == null:
-			self.queue_free()
-			return
-		if position != self.target:
-			self.position = self.position.move_toward(self.target, speed*delta)
-		else:
-			represents.visible = true
-			self.queue_free()
+	pass
 
+func _end_tween():
+	represents.visible = true
+	self.queue_free()
 
 
 func animate(from: Vector2, to: Vector2, card: Card):
 	card.visible = false
 	self.texture = card.texture
 	self.represents = card
-	self.position = from
-	self.target = to
+	self.global_position = from
 	self.visible = true
-	self.active = true
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", to, 0.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_callback(_end_tween)
+
+
+

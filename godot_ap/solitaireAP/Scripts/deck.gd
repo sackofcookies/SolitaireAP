@@ -41,9 +41,9 @@ func deal(location: Target):
 		location.add_child(temp)
 		self.add_child(animate)
 		temp.set_card(cards[0].y, cards[0].x)
-		var to = temp.get_node("Target").global_position
+		var to = temp.global_position
 		#to.x = to.x - temp.get_maximum_size().x
-		animate.animate(self.position, to, temp)
+		animate.animate(self.global_position, to, temp)
 		cards.remove_at(0)
 
 
@@ -52,3 +52,4 @@ func _pressed() -> void:
 	self.deal(deckSlot.get_last_child().get_node("Target"))
 	self.deal(deckSlot.get_last_child().get_node("Target"))
 	self.deal(deckSlot.get_last_child().get_node("Target"))
+

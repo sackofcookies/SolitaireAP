@@ -19,14 +19,14 @@ script = ExtResource("1_ygqui")
 [node name="HScrollBar" type="HScrollBar" parent="." unique_id=1078839268]
 offset_left = 155.0
 offset_top = 201.0
-offset_right = 965.0
+offset_right = 1122.0
 offset_bottom = 209.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=547851590]
 offset_left = 155.0
 offset_top = 214.0
-offset_right = 965.0
-offset_bottom = 638.0
+offset_right = 1122.0
+offset_bottom = 4493.0
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
@@ -73,6 +73,12 @@ offset_top = 17.0
 offset_right = 258.5
 offset_bottom = 162.5
 
+[node name="DeckSlot" parent="." unique_id=1896127673 instance=ExtResource("3_ystg3")]
+offset_left = 21.0
+offset_top = 27.0
+offset_right = 130.5
+offset_bottom = 172.5
+
 [node name="Deck" parent="." unique_id=259796299 node_paths=PackedStringArray("deckSlot", "storeSlot") instance=ExtResource("2_ystg3")]
 offset_left = 147.0
 offset_top = 9.0
@@ -82,12 +88,6 @@ deckSlot = NodePath("../DeckSlot")
 card = ExtResource("3_2jeuk")
 storeSlot = NodePath("../StoreSlot")
 movingCard = ExtResource("6_6hi2m")
-
-[node name="DeckSlot" parent="." unique_id=1896127673 instance=ExtResource("3_ystg3")]
-offset_left = 21.0
-offset_top = 27.0
-offset_right = 130.5
-offset_bottom = 172.5
 
 [node name="GoalStacks" type="HBoxContainer" parent="." unique_id=832501763]
 offset_left = 268.0

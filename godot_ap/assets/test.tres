@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://dgjdvftv4p3sj"]
+
+[resource]
+/colors/Hbox = Color(0.060566723, 0.09287671, 0.027124915, 1)
+/constants/test = 0
+/fonts/test = null
+/icons/test = null
+/styles/test = null
